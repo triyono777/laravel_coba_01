@@ -7,15 +7,25 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
 
-    public function tampilData()
-    {
-        return response(view('products.index'));
-    }
-
-
     public function index()
     {
-        return response(view('products.index'));
+
+        $products = [
+            [
+                'id' => 1,
+                'sku' => '#AB12312',
+                'name' => 'Product A',
+                'price' => 15000
+            ],
+            [
+                'id' => 2,
+                'sku' => '#CD12312',
+                'name' => 'Product B',
+                'price' => 20000
+            ]
+        ];
+
+        return response(view('products.index', ['dataProduk' => $products]));
     }
 
     public function create()
