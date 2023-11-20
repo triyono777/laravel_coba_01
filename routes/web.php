@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
 use App\Http\Controllers\profilController;
+use App\Http\Controllers\AdminController;
 
 Route::get('products', [ProductController::class, 'index'])->name('products.index');
 
@@ -18,6 +19,9 @@ Route::delete('products/{id}', [ProductController::class, 'destroy'])->name('pro
 Route::get('products/{id}', [ProductController::class, 'show']);
 
 Route::get('profil', [ProfilController::class, 'index']);
+
+Route::get('admin', [AdminController::class, 'index'])->name('admin.index');
+
 
 Route::get('/', function () {
     return view('welcome');
